@@ -85,6 +85,45 @@ display: block;
 margin: 20px auto;
 text-align: center;
 }
+.game-card {
+width: 300px;
+margin: 20px auto;
+padding: 20px;
+text-align: center;
+border: 2px solid #a855f7;
+border-radius: 15px;
+background: #111;
+box-shadow: 0 0 15px #a855f7;
+}
+.game-card h3 {
+color: #c084fc;
+}
+.game-card p {
+color:white;
+}
+h2 {
+text-align: center;
+}
+.game-card img {
+width: 100%;
+max-width: 260px;
+border-radius: 12px;
+box-shadow: 0 0 15px #a855f7;
+}
+.game-card button {
+padding: 10px 20px;
+margin-top: 10px;
+border: 2px solid #a855f7;
+border-radius: 10px:
+background: #111;
+color: #c084fc;
+font-size: 16px;
+cursor: pointer;
+box-shadow: 0 0 10px #a855f7;
+}
+.game-card button:hover {
+box-shadow: 0 0 20px #a855f7;
+}
 </style>
 </head>
 <body>
@@ -92,12 +131,12 @@ text-align: center;
 <div id="light"></div>
 <div class="card">
 <h1> MY GAMING SITE 😎</h1>
-<button onclick="startgame()">PLAYNOW</button>
+<button onclick="startgame()">📥نام سازنده سایت📥</button>
 <p id="message"></p>
 </div>
 <script>
 function startgame() {
-document.getElementById("message").innerHTML = "GAME STARTED🎮" ;
+document.getElementById("message").innerHTML = "امیر مهدی قربان کریمی" ;
 }
 </script>
 <script>
@@ -123,6 +162,15 @@ star.style.top =
 },30);
 }
 </script>
+<h2> 🎮 معرفی بازی ها 🎮 </h2>
+<div class="game-card">
+<img src="minecraft.jpg"alt="minecraft">
+<h3> 🎮 minecraft.1 </h3>
+<p> یک بازی خلاقانه و جذاب که میتونی در ان
+دنیای خودت رو بسازی و ماجراجویی کنی.</p>
+<p> ⭐9/10:امتیاز </P>
+<button onclick="showGame()"> بیشتر بخوانید 🎮 </button>
+</div>
 <script>
 let card=document.querySelector(".card");
 document.onmousemove=function(e){
@@ -148,6 +196,11 @@ card.style.transform=
         data-lang="en"
         crossorigin="anonymous"
         async>
+</script>
+<script>
+function showGame(){
+alert("🎮 ویک بازی خلاقانه وماجراجویی که می تونی دنیای خودت رو بساز!");
+}
 </script>
 </body>
 </html>
