@@ -124,6 +124,27 @@ box-shadow: 0 0 10px #a855f7;
 .game-card button:hover {
 box-shadow: 0 0 20px #a855f7;
 }
+#game-text {
+width: 80%;
+max-width: 700px;
+margin: 25px auto;
+padding: 25px;
+background: #111;
+border: 2px solid #a855f7;
+border-radius: 15px;
+box-shadoow: 0 0 15px #a855f7, 0 0 30px #7e22ce;
+color: white;
+line-height: 2;
+}
+#game-text h2 {
+color: #c084fc;
+text-align: center;
+text-shadow: 0 0 10px #a855f7;
+}
+#game-text p {
+color: white;
+text-align: right;
+}
 </style>
 </head>
 <body>
@@ -169,7 +190,20 @@ star.style.top =
 <p> یک بازی خلاقانه و جذاب که میتونی در ان
 دنیای خودت رو بسازی و ماجراجویی کنی.</p>
 <p> ⭐9/10:امتیاز </P>
-<button onclick="showGame()"> بیشتر بخوانید 🎮 </button>
+<button onclick="document.getElementById('game-text').style.display='block'">
+ 🎮بیشتر بخوانید 
+ </button>
+<div id="game-text" style="display:none;">
+<p>
+ماینکرفت یک بازی سه بعدی است که هدف خاصی را
+دنبال نمی کند و بازیکن کاملا ازادانه می تواند هدفش را
+انتخواب کند.
+بازی به صورت پیش فرض اول شخص است.
+دنیای بازی از بلوک هایی مانند خاک,سنگ,تنه درخت
+اب و گدازه تشکیل شده است.
+اصل بازی جمع کردن و قرار دادن این بلوک ها برای
+ساخت سازه های مختلف است.
+</p>
 </div>
 <script>
 let card=document.querySelector(".card");
@@ -198,9 +232,10 @@ card.style.transform=
         async>
 </script>
 <script>
-function showGame(){
-alert("🎮 ویک بازی خلاقانه وماجراجویی که می تونی دنیای خودت رو بساز!");
+function showGame() {
+document.getElementById("game-text").style.
+display = "block";
 }
-</script>
+</scrip>
 </body>
 </html>
