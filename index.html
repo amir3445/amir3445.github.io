@@ -1,0 +1,123 @@
+<html>
+<head>
+<title> GAMING </title>
+<style>
+body{
+margin:0;
+background:#050510;
+color:white;
+font-family:arial;
+}
+h1 {
+text-align:center;
+margin-top:250px;
+font-size:50px;
+color:white;
+text-shadow:0 0 10px purple,o o 20px purple,0 0 40px purple;
+animation:glow 2s infinite alternate;
+}
+@keyframes glow {
+from {
+text-shadow:0 0 10px purple;
+}
+to{
+text-shadow:0 0 40px violet;
+}
+}
+button {
+display:block;
+margin:30px auto;
+padding:15px 40px;
+background:transparent;
+color:white;
+border:2px solid purple;
+border-radius:30px;
+font-size:18px;
+box-shadow:0 0 15px purple;
+cursor:pointer;
+transition:0.3s;
+}
+button:hover {
+background:purple;
+box-shadow:0 0 40px purple;
+transform:scale(1.1);
+}
+#message {
+text-align:center;
+color:#fff;
+font_size:25px;
+margin-top:20px;
+text-shadow:0 0 20px purple;
+}
+#light {
+position:fixed;
+width:150px;
+height:150px;
+background:purple;
+border-radius:50%;
+filter:blur(60px);
+opacity:.5;
+pointer-events:none;
+z-index:1;
+transform:translate(-50%,-50%);
+}
+.star {
+position:fixed;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+z-index:0;
+}
+.card {
+transition:transform .2s;
+}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div id="light"></div>
+<div class="card">
+<h1> MY GAMING SITE</h1>
+<button onclick="startgame()">PLAYNOW</button>
+<p id="message"></p>
+</div>
+<script>
+function startgame() {
+document.getElementById("message").innerHTML = "GAME STARTED!" ;
+}
+</script>
+<script>
+document.onmousemove = function(e) {
+let light =
+document.getElementById("light");
+light.style.left = e.clientx + "px";
+light.style.top = e.clientY + "px";
+};
+</script>
+<script>
+for(let i=0;i<100;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+star.speed=Math.random()*2+1;
+document.body.appendChild(star);
+setInterval(function(){
+star.style.top =
+(parseFloat(star.style.top) + star.speed/100) %
+100 + "%";
+},30);
+}
+</script>
+<script>
+let card=document.querySelector(".card");
+document.onmousemove=function(e){
+let x=(window.innerWidth/2-e.clientX)/20;
+let y=(window.innerHeight/2-e.clientY)/20;
+card.style.transform=
+"rotateY("+x+"deg) rotateX("+y+"deg)";
+};
+</script>
+</body>
+</html>
